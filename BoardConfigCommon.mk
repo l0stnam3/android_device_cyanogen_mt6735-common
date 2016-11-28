@@ -48,6 +48,14 @@ endif
 
 BOARD_FLASH_BLOCK_SIZE := 4096
 
+# Enable dex-preoptimization
+WITH_DEXPREOPT := false
+DONT_DEXPREOPT_PREBUILTS := true
+BLOCK_BASED_OTA :=false
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := spark,wileyfox_spark,porridge
+
 # Common properties
 TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
 
