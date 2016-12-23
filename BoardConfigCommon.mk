@@ -53,7 +53,7 @@ WITH_DEXPREOPT := false
 DONT_DEXPREOPT_PREBUILTS := true
 
 #OTA PACKAGE
-BLOCK_BASED_OTA :=false
+BLOCK_BASED_OTA := false
 
 # Common properties
 TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
@@ -97,12 +97,6 @@ BOARD_CONNECTIVITY_MODULE := conn_soc
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
 
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-		WITH_DEXPREOPT ?= true
-  endif
-endif
-
 # Display
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -129,9 +123,6 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # RIL
 BOARD_RIL_CLASS := ../../../device/cyanogen/mt6735-common/ril
-
-# Releasetools
-#TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # SELinux
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
