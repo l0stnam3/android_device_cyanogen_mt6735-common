@@ -676,3 +676,12 @@ on property:debug.MB.prdebug=1
 on property:debug.MB.prdebug=0
     write /sys/kernel/debug/dynamic_debug/control "file *mediatek* -p"
 
+on property:ro.debuggable=1
+    start console
+
+# adbd is controlled via property triggers in init.<platform>.usb.rc
+service adbd /sbin/adbd
+    class core
+    socket adbd stream 660 system system
+    disabled
+    seclabel u:r:adbd:s0

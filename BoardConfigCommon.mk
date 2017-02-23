@@ -121,6 +121,9 @@ endif
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
+# SU
+WITH_SU := true
+
 # RIL
 BOARD_RIL_CLASS := ../../../device/cyanogen/mt6735-common/ril
 
