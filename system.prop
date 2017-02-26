@@ -24,3 +24,4 @@ wifi.direct.interface=p2p0
 
 # Graphics
 ro.opengles.version=196608
+

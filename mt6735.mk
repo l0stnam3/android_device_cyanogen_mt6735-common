@@ -101,16 +101,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
-ifneq ($(TARGET_BUILD_VARIANT), user)
+#ifneq ($(TARGET_BUILD_VARIANT), user)
 # Mediatek logging service
-PRODUCT_PACKAGES += \
-    MTKLogger \
-    emdlogger1 \
-    mdlogger \
-    mobile_log_d \
-    netdiag \
-    tcpdump
-endif
+#PRODUCT_PACKAGES += \
+#    MTKLogger \
+#    emdlogger1 \
+#    mdlogger \
+#    mobile_log_d \
+#    netdiag \
+#    tcpdump
+#endif
 
 # Key Layouts
 PRODUCT_COPY_FILES += \
