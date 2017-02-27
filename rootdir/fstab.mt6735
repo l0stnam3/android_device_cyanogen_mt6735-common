@@ -16,7 +16,7 @@
 
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/frp    /persistent     emmc  defaults                                                          defaults
 
-/devices/mtk-msdc.0/11240000.msdc1*  auto      vfat      defaults        voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/mtk-msdc.0/11240000.msdc1*  auto      vfat      defaults        voldmanaged=sdcard1:auto,noemulatedsd,encryptable=userdata
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvram         /nvram          emmc  defaults defaults
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/proinfo       /proinfo        emmc  defaults defaults
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/lk            /bootloader     emmc  defaults defaults
