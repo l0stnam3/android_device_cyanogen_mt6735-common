@@ -48,6 +48,10 @@ PRODUCT_PACKAGES += \
     factory_init.project.rc \
     ueventd.mt6735.rc
 
+# Recovery Ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -100,17 +104,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
-
-#ifneq ($(TARGET_BUILD_VARIANT), user)
-# Mediatek logging service
-#PRODUCT_PACKAGES += \
-#    MTKLogger \
-#    emdlogger1 \
-#    mdlogger \
-#    mobile_log_d \
-#    netdiag \
-#    tcpdump
-#endif
 
 # Key Layouts
 PRODUCT_COPY_FILES += \

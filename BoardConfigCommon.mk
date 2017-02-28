@@ -48,6 +48,10 @@ endif
 
 BOARD_FLASH_BLOCK_SIZE := 4096
 
+# Enable dex-preoptimization
+#WITH_DEXPREOPT := false
+#DONT_DEXPREOPT_PREBUILTS := true
+
 #OTA PACKAGE
 BLOCK_BASED_OTA := false
 
@@ -56,6 +60,25 @@ TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
 
 # FSTAB
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/fstab.mt6735
+
+# TWRP
+BOARD_SUPPRESS_SECURE_ERASE := true
+TW_DEFAULT_BRIGHTNESS := 80
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_FLASH_FROM_STORAGE := true
+TW_INCLUDE_CRYPTO := true
+TW_MAX_BRIGHTNESS := 255
+TW_NEW_ION_HEAP := true
+TWHAVE_SELINUX := true
+TW_THEME := portrait_hdpi
+TW_EXCLUDE_SUPERSU := false
+TW_EXTRA_LANGUAGES := true
 
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
@@ -92,12 +115,6 @@ BOARD_CONNECTIVITY_MODULE := conn_soc
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
-
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-		WITH_DEXPREOPT ?= true
-  endif
-endif
 
 # Display
 USE_OPENGL_RENDERER := true
