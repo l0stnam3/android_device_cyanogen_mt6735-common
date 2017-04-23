@@ -26,3 +26,6 @@ ro.opengles.version=196608
 
 # Tethering
 wifi.tethering.interface=wlan0
+
+# SD
+ro.sys.sdcardfs=true
