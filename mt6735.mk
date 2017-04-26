@@ -84,8 +84,9 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.default 
-	
+    power.default \
+    power.6735
+
 # Radio dependencies
 PRODUCT_PACKAGES += \
     muxreport \

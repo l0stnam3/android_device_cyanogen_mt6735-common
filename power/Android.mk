@@ -27,3 +27,4 @@ ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
 endif
 
 include $(BUILD_SHARED_LIBRARY)
+

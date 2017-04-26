@@ -64,9 +64,11 @@ static void power_fwrite(const char *path, char *s)
 
 static void power_hint(struct power_module *module, power_hint_t hint,
                        void *data) {
+    int32_t dataint = -1;
     switch (hint) {
         case POWER_HINT_LOW_POWER:
-            if (data) {
+            dataint = *(int32_t *)data;
+            if (dataint) {
                 power_fwrite(MT_FPS_UPPER_BOUND_PATH, "30");
                 power_fwrite(MT_RUSH_BOOST_PATH, "0");
             } else {
@@ -78,7 +80,7 @@ static void power_hint(struct power_module *module, power_hint_t hint,
         case POWER_HINT_VSYNC:
         case POWER_HINT_INTERACTION:
         case POWER_HINT_CPU_BOOST:
-        case POWER_HINT_LAUNCH:
+        case POWER_HINT_LAUNCH_BOOST:
         case POWER_HINT_SET_PROFILE:
         case POWER_HINT_VIDEO_ENCODE:
         case POWER_HINT_VIDEO_DECODE:
@@ -120,3 +122,4 @@ struct power_module HAL_MODULE_INFO_SYM = {
     .powerHint = power_hint,
     .setFeature = set_feature,
 };
+
